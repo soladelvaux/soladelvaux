@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sola Delvaux</title>
+<meta name="description" content="Sola Delvaux — lofi & atmospheric music. Listen on Spotify and YouTube.">
+<meta property="og:title" content="Sola Delvaux">
+<meta property="og:description" content="Lofi & atmospheric music for quiet hours.">
+<meta name="theme-color" content="#0b0d1a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg1:#0b0d1a; --bg2:#151a33; --bg3:#2a2346;
+    --text:#ece8f4; --muted:#a49fb8; --accent:#c9b6ff; --glow:rgba(201,182,255,.35);
+    --card:rgba(255,255,255,.06); --line:rgba(255,255,255,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{min-height:100%}
+  body{
+    font-family:'Inter',system-ui,sans-serif;color:var(--text);
+    background:radial-gradient(ellipse at 50% -10%, var(--bg3) 0%, var(--bg2) 40%, var(--bg1) 80%);
+    background-color:var(--bg1);min-height:100vh;overflow-x:hidden;
+    display:flex;flex-direction:column;align-items:center;
+  }
+  canvas#stars{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+  .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.07;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  main{position:relative;z-index:2;width:100%;max-width:520px;padding:72px 16px 48px;text-align:center}
+  .moon{width:88px;height:88px;margin:0 auto 28px;border-radius:50%;
+    background:radial-gradient(circle at 35% 35%, #fff8ec 0%, #e9dcff 45%, #9f8fd6 100%);
+    box-shadow:0 0 60px 12px var(--glow), 0 0 140px 40px rgba(160,140,230,.15);
+    animation:breathe 6s ease-in-out infinite}
+  @keyframes breathe{0%,100%{box-shadow:0 0 50px 10px var(--glow),0 0 120px 30px rgba(160,140,230,.12)}50%{box-shadow:0 0 70px 16px var(--glow),0 0 160px 50px rgba(160,140,230,.2)}}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(2.6rem,11vw,3.6rem);letter-spacing:.04em;line-height:1}
+  .tag{margin-top:12px;font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent)}
+  .bio{margin:24px auto 0;max-width:380px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.25rem;line-height:1.5;color:var(--muted)}
+  .links{margin-top:36px;display:flex;flex-direction:column;gap:12px}
+  .btn{display:flex;align-items:center;justify-content:center;gap:12px;padding:16px 20px;border-radius:16px;
+    background:var(--card);border:1px solid var(--line);color:var(--text);text-decoration:none;font-weight:500;font-size:1rem;
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .2s, background .2s, border-color .2s}
+  .btn:hover,.btn:focus-visible{transform:translateY(-2px);background:rgba(255,255,255,.1);border-color:var(--accent);outline:none}
+  .btn svg{width:22px;height:22px;flex-shrink:0}
+  .player{margin-top:36px;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+  .player iframe{display:block;width:100%;height:352px;border:0}
+  .label{margin-top:44px;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+  footer{position:relative;z-index:2;padding:24px 16px 36px;font-size:.75rem;color:var(--muted);letter-spacing:.08em}
+  @media (prefers-reduced-motion:reduce){.moon{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<main>
+  <div class="moon" aria-hidden="true"></div>
+  <h1>Sola Delvaux</h1>
+  <p class="tag">lofi · atmospheric</p>
+  <p class="bio">Music for quiet hours — soft beats and drifting soundscapes to keep you company through the night.</p>
+
+  <nav class="links" aria-label="Listen">
+    <a class="btn" href="https://open.spotify.com/artist/2hf5Xl8T782Pa5ZKI0F0va" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="#1DB954" aria-hidden="true"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.5 17.3a.75.75 0 0 1-1 .25c-2.8-1.7-6.4-2.1-10.6-1.2a.75.75 0 1 1-.33-1.46c4.6-1 8.6-.6 11.7 1.4.36.2.47.68.25 1.02zm1.47-3.27a.94.94 0 0 1-1.29.31c-3.2-2-8.1-2.5-11.9-1.4a.94.94 0 1 1-.54-1.8c4.3-1.3 9.7-.7 13.4 1.6.44.27.58.85.31 1.29zm.13-3.4C15.3 8.4 8.9 8.2 5.2 9.3a1.13 1.13 0 1 1-.65-2.16c4.3-1.3 11.3-1.05 15.7 1.56a1.13 1.13 0 0 1-1.15 1.94z"/></svg>
+      Listen on Spotify
+    </a>
+    <a class="btn" href="https://www.youtube.com/@soladelvaux" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#FF0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/><path fill="#fff" d="M9.6 15.6 15.8 12 9.6 8.4z"/></svg>
+      Watch on YouTube
+    </a>
+  </nav>
+
+  <p class="label">Now playing</p>
+  <div class="player">
+    <iframe src="https://open.spotify.com/embed/artist/2hf5Xl8T782Pa5ZKI0F0va?utm_source=generator&theme=0" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Sola Delvaux on Spotify"></iframe>
+  </div>
+</main>
+
+<footer>© <span id="y"></span> Sola Delvaux</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  (function(){
+    const c=document.getElementById('stars'),x=c.getContext('2d');
+    let w,h,s=[];
+    const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function init(){
+      const d=window.devicePixelRatio||1;
+      w=innerWidth;h=innerHeight;c.width=w*d;c.height=h*d;x.setTransform(d,0,0,d,0,0);
+      s=Array.from({length:Math.round(w*h/6000)},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.2+.2,p:Math.random()*Math.PI*2,v:Math.random()*.015+.005,d:Math.random()*.08+.02}));
+    }
+    function draw(){
+      x.clearRect(0,0,w,h);
+      for(const t of s){
+        t.p+=t.v; if(!reduce){t.y-=t.d; if(t.y<0){t.y=h;t.x=Math.random()*w;}}
+        x.globalAlpha=.35+Math.sin(t.p)*.35;
+        x.fillStyle='#e9e2ff';x.beginPath();x.arc(t.x,t.y,t.r,0,Math.PI*2);x.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+    addEventListener('resize',init);init();draw();
+  })();
+</script>
+</body>
+</html>
